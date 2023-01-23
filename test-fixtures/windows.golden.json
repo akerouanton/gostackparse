@@ -9,6 +9,12 @@
       "Stack": [
         {
           "Func": "runtime/pprof.writeGoroutineStacks",
+          "Args": [
+            "0x14e5940",
+            "0xc0000abc50",
+            "0x101b8a5",
+            "0xc000333d20"
+          ],
           "File": "C:/Users/felixge/pprof.go",
           "Line": 693
         }

@@ -9,21 +9,45 @@
       "Stack": [
         {
           "Func": "runtime/pprof.writeGoroutineStacks",
+          "Args": [
+            "0x4124060",
+            "0xc000010018",
+            "0x1000000000030",
+            "0x4713e40"
+          ],
           "File": "/usr/local/Cellar/go/1.15.6/libexec/src/runtime/pprof/pprof.go",
           "Line": 693
         },
         {
           "Func": "runtime/pprof.writeGoroutine",
+          "Args": [
+            "0x4124060",
+            "0xc000010018",
+            "0x2",
+            "0x0",
+            "0x50"
+          ],
           "File": "/usr/local/Cellar/go/1.15.6/libexec/src/runtime/pprof/pprof.go",
           "Line": 682
         },
         {
           "Func": "runtime/pprof.(*Profile).WriteTo",
+          "Args": [
+            "0x41b45a0",
+            "0x4124060",
+            "0xc000010018",
+            "0x2",
+            "0xffffffff",
+            "0xc00007a058"
+          ],
           "File": "/usr/local/Cellar/go/1.15.6/libexec/src/runtime/pprof/pprof.go",
           "Line": 331
         },
         {
           "Func": "main.main",
+          "Args": [
+            ""
+          ],
           "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
           "Line": 40
         }
@@ -39,11 +63,17 @@
       "Stack": [
         {
           "Func": "main._Cfunc_c_sleep_loop",
+          "Args": [
+            "0xf4240"
+          ],
           "File": "_cgo_gotypes.go",
           "Line": 56
         },
         {
           "Func": "main.cSleepLoop",
+          "Args": [
+            "0x3b9aca00"
+          ],
           "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
           "Line": 44
         }
@@ -51,6 +81,7 @@
       "FramesElided": false,
       "CreatedBy": {
         "Func": "main.main",
+        "Args": null,
         "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
         "Line": 36
       }
@@ -63,26 +94,42 @@
       "Stack": [
         {
           "Func": "time.Sleep",
+          "Args": [
+            "0x3b9aca00"
+          ],
           "File": "/usr/local/Cellar/go/1.15.6/libexec/src/runtime/time.go",
           "Line": 188
         },
         {
           "Func": "main.goSleep",
+          "Args": [
+            "..."
+          ],
           "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
           "Line": 53
         },
         {
           "Func": "main._cgoexpwrap_65ad5df3a112_goSleep",
+          "Args": [
+            "0xf4240",
+            "0xc000001b00"
+          ],
           "File": "_cgo_gotypes.go",
           "Line": 73
         },
         {
           "Func": "main._Cfunc_c_go_sleep_loop",
+          "Args": [
+            "0xf4240"
+          ],
           "File": "_cgo_gotypes.go",
           "Line": 43
         },
         {
           "Func": "main.cGoSleepLoop",
+          "Args": [
+            "0x3b9aca00"
+          ],
           "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
           "Line": 48
         }
@@ -90,6 +137,7 @@
       "FramesElided": false,
       "CreatedBy": {
         "Func": "main.main",
+        "Args": null,
         "File": "/Users/felix.geisendoerfer/go/src/github.com/DataDog/dd-trace-go/profiler/internal/stackparse/test-fixtures/cgo.go",
         "Line": 37
       }

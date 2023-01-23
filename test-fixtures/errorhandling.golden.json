@@ -11,6 +11,9 @@
       "Stack": [
         {
           "Func": "main.main",
+          "Args": [
+            ""
+          ],
           "File": "/example/main.go",
           "Line": 152
         }
@@ -26,6 +29,9 @@
       "Stack": [
         {
           "Func": "main.foo",
+          "Args": [
+            ""
+          ],
           "File": "/example/main.go",
           "Line": 182
         }
@@ -33,6 +39,7 @@
       "FramesElided": false,
       "CreatedBy": {
         "Func": "main.main",
+        "Args": null,
         "File": "/example/main.go",
         "Line": 110
       }

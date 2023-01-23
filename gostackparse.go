@@ -210,7 +210,11 @@ func parseGoroutineHeader(line []byte) *Goroutine {
 // runtime/pprof.writeGoroutineStacks(0x2b016e0, 0xc0995cafc0, 0xc00468e150, 0x0)
 //
 // Example Output:
-// &Frame{Func: "runtime/pprof.writeGoroutineStacks"}
+//
+//	&Frame{
+//	   Func: "runtime/pprof.writeGoroutineStacks",
+//	   Args: []string{"0x2b016e0", "0xc0995cafc0", "0xc00468e150", "0x0"}
+//	}
 func parseFunc(line []byte, state parserState) *Frame {
 	// createdBy func calls don't have trailing parens, just return them as-is.
 	if state == stateCreatedByFunc {
@@ -242,7 +246,11 @@ func parseFunc(line []byte, state parserState) *Frame {
 	if openIndex == -1 || closeIndex == -1 || openIndex == 0 {
 		return nil
 	}
-	return &Frame{Func: string(line[0:openIndex])}
+
+	return &Frame{
+		Func: string(line[0:openIndex]),
+		Args: strings.Split(string(line[openIndex+1:closeIndex]), ", "),
+	}
 }
 
 // parseFile parses a file line and updates f accordingly or returns false on
@@ -335,6 +343,8 @@ type Frame struct {
 	// Func is the name of the function, including package name, e.g. "main.main"
 	// or "net/http.(*Server).Serve".
 	Func string
+	// Args is the list of arguments passed to Func, e.g. "0xc0000fcfc0".
+	Args []string
 	// File is the absolute path of source file e.g.
 	// "/go/src/example.org/example/main.go".
 	File string

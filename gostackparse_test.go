@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 	"testing"
 	"time"
@@ -440,7 +441,7 @@ func Test_parseFile(t *testing.T) {
 			got := parseFile([]byte(tt.line), &f)
 			if got != tt.wantReturn {
 				t.Fatalf("got=%v want=%v", got, tt.wantReturn)
-			} else if f != tt.wantFrame {
+			} else if !reflect.DeepEqual(f, tt.wantFrame) {
 				t.Fatalf("got=%+v want=%+v", f, tt.wantFrame)
 			}
 		})
